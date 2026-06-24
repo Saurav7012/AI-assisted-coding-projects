@@ -1,0 +1,177 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Segoe UI, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  min-height: 100vh;
+  padding: 30px;
+}
+
+.container {
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+}
+
+.textbox {
+  background: #fff;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  padding: 10px 14px;
+  font-size: 14px;
+  transition: all .3s;
+}
+
+.textbox:focus {
+  box-shadow: 0 0 0 2px #00c6ff;
+}
+
+.search {
+  cursor: pointer;
+  color: #fff;
+  background: #1f2937;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  transition: all .3s;
+}
+
+.search:hover {
+  background: #00c6ff;
+  transform: translateY(-2px);
+}
+
+.btn {
+  color: #fff;
+  background: #00c6ff;
+}
+
+.btn:hover {
+  background: #0072ff;
+}
+
+.card {
+  backdrop-filter: blur(10px);
+  color: #fff;
+  text-align: center;
+  background: #ffffff14;
+  border-radius: 16px;
+  width: 250px;
+  padding: 20px;
+  transition: all .3s;
+  box-shadow: 0 8px 20px #00000040;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px #0006;
+}
+
+.card img {
+  object-fit: contain;
+  width: 70px;
+  height: 70px;
+  margin: 15px 0;
+}
+
+.name {
+  margin-bottom: 8px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.price {
+  color: #0fc;
+  margin: 6px 0;
+  font-size: 16px;
+}
+
+.rank {
+  color: #ffd369;
+  font-size: 14px;
+}
+
+.supply {
+  color: #d1d5db;
+  margin-top: 6px;
+  font-size: 13px;
+}
+
+.coinRoute {
+  -webkit-backdrop-filter: blur(20px);
+  color: #e6f1ff;
+  text-align: center;
+  background: #ffffff0d;
+  border: 1px solid #ffffff14;
+  border-radius: 28px;
+  max-width: 900px;
+  margin: 80px auto;
+  padding: 50px;
+  transition: all .3s;
+  box-shadow: 0 20px 60px #0009, inset 0 1px 1px #ffffff14;
+}
+
+.coinRoute:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 30px 80px #000c, 0 0 25px #00ffc833;
+}
+
+.coinRoute h1 {
+  letter-spacing: -1px;
+  margin-bottom: 25px;
+  font-size: 42px;
+  font-weight: 700;
+}
+
+.coinRoute img {
+  cursor: pointer;
+  filter: drop-shadow(0 0 25px #00ffc866);
+  width: 140px;
+  height: 140px;
+  margin-bottom: 30px;
+  transition: transform .3s;
+}
+
+.coinRoute img:hover {
+  transform: scale(1.08)rotate(5deg);
+}
+
+.coinRoute p {
+  color: #cfd9e6;
+  text-align: justify;
+  margin-top: 20px;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.coinRoute p::-webkit-scrollbar {
+  width: 6px;
+}
+
+.coinRoute p::-webkit-scrollbar-thumb {
+  background: #00d9f5;
+  border-radius: 10px;
+}
+
+@media (width <= 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+  }
+}
+/*# sourceMappingURL=CRYPTO.3a01df49.css.map */
