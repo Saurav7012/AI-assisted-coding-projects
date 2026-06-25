@@ -13,13 +13,7 @@ export default function App() {
       const saved = localStorage.getItem('tictactoe_scores');
       if (saved) {
         const parsed = JSON.parse(saved);
-        if (
-          typeof parsed.x === 'number' &&
-          typeof parsed.o === 'number' &&
-          typeof parsed.ties === 'number'
-        ) {
-          return parsed;
-        }
+        return parsed;
       }
     } catch (e) {
       console.warn('Failed to parse saved scores, defaulting to 0', e);
@@ -77,11 +71,15 @@ export default function App() {
   }, [matchLogs]);
 
   const { winner: winPlayer, line: winningLine } = checkWinner(board);
+
+  
+  
   const isDraw = !winPlayer && isBoardFull(board);
   const isGameOver = Boolean(winPlayer) || isDraw;
 
   const [scoreUpdated, setScoreUpdated] = useState(false);
 
+  console.log("scores", scores);
   useEffect(() => {
     if (isGameOver && !scoreUpdated) {
       if (winPlayer) {
@@ -123,6 +121,8 @@ export default function App() {
     }
   }, [isGameOver, winPlayer, isDraw, scoreUpdated, bestStreak]);
 
+
+
   const handleCellClick = (index) => {
     if (board[index] || isGameOver) return;
     setMoveHistory((prev) => [...prev, [...board]]);
@@ -132,6 +132,8 @@ export default function App() {
     setBoard(nextBoard);
     setCurrentTurn(currentTurn === 'X' ? 'O' : 'X');
   };
+
+  console.log(moveHistory);
 
   const handleUndo = () => {
     if (moveHistory.length === 0 || isGameOver) return;

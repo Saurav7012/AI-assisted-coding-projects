@@ -5,6 +5,7 @@ export default function GameBoard({ board, onCellClick, winningLine, disabled })
     return winningLine ? winningLine.includes(index) : false;
   };
 
+
   return (
     <div className="game-container flex items-center justify-center">
       <div className="board-grid">
