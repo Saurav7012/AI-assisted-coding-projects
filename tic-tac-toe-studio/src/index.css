@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --color-primary-indigo: #6366f1;
+  --color-primary-indigo-light: #818cf8;
+  --color-accent-pink: #ec4899;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #f8fafc;
+  color: #1e293b;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.app-shell {
+  background-color: #f8fafc;
+  color: #1e293b;
+}
+
+body.dark-mode {
+  background-color: #0f172a;
+  color: #e2e8f0;
+}
+
+body.dark-mode .app-shell {
+  background-color: #0f172a;
+  color: #e2e8f0;
+}
+
+body.dark-mode .app-shell .status-indicator,
+body.dark-mode .app-shell .stat-card,
+body.dark-mode .app-shell .game-container .board-grid {
+  background: rgba(15, 23, 42, 0.8);
+  border-color: rgba(148, 163, 184, 0.35);
+}
+
+body.dark-mode .app-shell .board-grid {
+  background: rgba(15, 23, 42, 0.65);
+}
+
+body.dark-mode .app-shell .cell {
+  background: #0f172a;
+  box-shadow: inset 0 -4px 0 rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .app-shell .cell-btn:focus-visible {
+  outline-color: #6366f1;
+}
+
+body.dark-mode .app-shell .dot {
+  box-shadow: 0 0 8px rgba(96, 165, 250, 0.5);
+}
+
+body.dark-mode .app-shell button,
+body.dark-mode .app-shell .stat-card,
+body.dark-mode .app-shell .status-indicator {
+  color: #e2e8f0;
+}
+
+body.dark-mode .cell {
+  background: #0f172a;
+  box-shadow: inset 0 -4px 0 rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .stat-card,
+body.dark-mode .status-indicator,
+body.dark-mode .game-container .board-grid {
+  background: rgba(15, 23, 42, 0.85);
+  border-color: rgba(148, 163, 184, 0.2);
+}
+
+body.dark-mode .stat-card {
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.25);
+}
+
+body.dark-mode .status-indicator {
+  background: rgba(15, 23, 42, 0.8);
+  border-color: rgba(148, 163, 184, 0.35);
+}
+
+body.dark-mode .dot {
+  box-shadow: 0 0 8px rgba(96, 165, 250, 0.5);
+}
+
+body.dark-mode .cell-btn:focus-visible {
+  outline-color: #6366f1;
+}
+
+/* Sleek Interface Theme Classes */
+.game-container {
+  perspective: 1000px;
+}
+
+.board-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  background: rgba(226, 232, 240, 0.5);
+  padding: 16px;
+  border-radius: 24px;
+  box-shadow: 0 20px 25px -5px rgba(0,0,0,0.05), 0 10px 10px -5px rgba(0,0,0,0.02);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.cell {
+  width: 110px;
+  height: 110px;
+  background: #ffffff;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  box-shadow: inset 0 -4px 0 rgba(0, 0, 0, 0.05);
+}
+
+@media (min-width: 640px) {
+  .cell {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+.cell:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), inset 0 -4px 0 rgba(0, 0, 0, 0.05);
+}
+
+.cell:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.stat-card {
+  background: white;
+  padding: 24px;
+  border-radius: 20px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(241, 245, 249, 1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.status-indicator {
+  background: white;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  padding: 8px 20px;
+  border-radius: 999px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 8px #10b981;
+}
+
+.cell-btn:focus-visible {
+  outline: 2px solid #6366f1;
+  outline-offset: 2px;
+}
+

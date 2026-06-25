@@ -1,0 +1,6 @@
+{
+  "name": "Tic-Tac-Toe",
+  "description": "A beautifully designed, responsive Tic-Tac-Toe game with real-time score tracking, responsive grid animations, and game history.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
