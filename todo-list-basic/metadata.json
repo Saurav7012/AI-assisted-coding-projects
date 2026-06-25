@@ -1,0 +1,6 @@
+{
+  "name": "Todo List",
+  "description": "A simple and modern Todo List application built with React, Tailwind CSS, and daisyUI, featuring options to add, delete, and pin tasks.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
