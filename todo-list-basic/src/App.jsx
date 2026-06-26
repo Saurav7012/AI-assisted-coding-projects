@@ -2,7 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { Pin, Trash2, Plus, Sparkles, CheckCircle2, ListTodo } from 'lucide-react';
 
 export default function App() {
-  // Load initial tasks from localStorage safely
+
+
+
   const [tasks, setTasks] = useState(() => {
     try {
       const savedTasks = localStorage.getItem('todo_tasks');
@@ -23,15 +25,19 @@ export default function App() {
   // Handle adding a new task
   const addTask = (e) => {
     e.preventDefault();
+
     if (!inputValue.trim()) return;
+
+ 
 
     const newTask = {
       id: Date.now().toString(),
-      text: inputValue.trim(),
-      pinned: false,
+      text: inputValue,
+      pinned: false
     };
 
-    setTasks((prevTasks) => [...prevTasks, newTask]);
+    setTasks([...tasks, newTask]);
+    
     setInputValue('');
   };
 
@@ -42,12 +48,16 @@ export default function App() {
 
   // Handle toggling the pinned state of a task
   const togglePinTask = (id) => {
-    setTasks((prevTasks) =>
-      prevTasks.map((task) =>
-        task.id === id ? { ...task, pinned: !task.pinned } : task
-      )
-    );
+    // setTasks((prevTasks) =>
+    //   prevTasks.map((task) =>
+    //     task.id === id ? { ...task, pinned: !task.pinned } : task
+    //   )
+    // );
+    const newTasks = tasks.map(obj => obj.id===id ? {...obj, pinned: !obj.pinned} : obj);
+    setTasks(newTasks);
+
   };
+
 
   // Sort tasks dynamically: pinned tasks always stay at the top
   const sortedTasks = [...tasks].sort((a, b) => {
@@ -197,6 +207,8 @@ export default function App() {
 
         </div>
       </div>
+
+   
     </div>
   );
 }
