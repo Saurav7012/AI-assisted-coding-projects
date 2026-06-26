@@ -1,0 +1,6 @@
+{
+  "name": "URL Shortener",
+  "description": "A beginner-friendly URL shortener built with React, Express, and MongoDB.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
