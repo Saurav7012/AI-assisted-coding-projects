@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Pin, Trash2, Plus, Sparkles, CheckCircle2, ListTodo } from 'lucide-react';
+import { Pin, Trash2, Plus, Sparkles, CheckCircle2, ListTodo, ClipboardCopy } from 'lucide-react';
 
 export default function App() {
 
@@ -57,6 +57,11 @@ export default function App() {
     setTasks(newTasks);
 
   };
+
+  const handleCopy = async (id) => {
+    const reqTask = tasks.filter((task) => task.id===id);
+    await navigator.clipboard.writeText(reqTask[0].text);
+  }
 
 
   // Sort tasks dynamically: pinned tasks always stay at the top
@@ -160,6 +165,16 @@ export default function App() {
                   </div>
 
                   <div className="flex items-center gap-2 flex-shrink-0">
+
+
+                    <button
+                      type="button"
+                      onClick={() => handleCopy(task.id)}
+                      className="btn btn-xs sm:btn-sm btn-circle bg-slate-900 text-slate-500"
+                    >
+                      <ClipboardCopy size={14} />
+                    </button>
+
                     {/* Pin/Unpin Button */}
                     <button
                       id={`pin-btn-${task.id}`}
