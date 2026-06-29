@@ -78,7 +78,7 @@ export default function App() {
       <div className="absolute top-0 left-1/4 w-[350px] h-[350px] bg-indigo-500/10 rounded-full blur-3xl pointer-events-none"></div>
       <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-violet-600/10 rounded-full blur-3xl pointer-events-none"></div>
       
-      <div id="todo-card" className="card w-full max-w-lg bg-slate-900/80 backdrop-blur-xl shadow-[0_20px_50px_rgba(0,0,0,0.3)] border border-slate-800 rounded-[2rem] overflow-hidden transition-all duration-300">
+      <div id="todo-card" className="card w-full max-w-[50rem] bg-slate-900/80 backdrop-blur-xl shadow-[0_20px_50px_rgba(0,0,0,0.3)] border border-slate-800 rounded-[2rem] overflow-hidden transition-all duration-300">
         <div className="card-body p-6 sm:p-8 md:p-10">
           
           {/* Header Area */}
