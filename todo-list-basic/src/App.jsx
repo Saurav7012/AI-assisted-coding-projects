@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Pin, Trash2, Plus, Sparkles, CheckCircle2, ListTodo, ClipboardCopy } from 'lucide-react';
+import { Pin, Trash2, Plus, Sparkles, CheckCircle2, ListTodo, ClipboardCopy, ClipboardCheck } from 'lucide-react';
 
 export default function App() {
 
@@ -16,6 +16,8 @@ export default function App() {
   });
 
   const [inputValue, setInputValue] = useState('');
+
+  const [copyTask, setCopyTask] = useState(null);
 
   // Sync tasks state to localStorage whenever it changes
   useEffect(() => {
@@ -61,6 +63,11 @@ export default function App() {
   const handleCopy = async (id) => {
     const reqTask = tasks.filter((task) => task.id===id);
     await navigator.clipboard.writeText(reqTask[0].text);
+    setCopyTask(id);
+
+    setTimeout(() => {
+      setCopyTask(null);
+    }, 2000);
   }
 
 
@@ -172,7 +179,7 @@ export default function App() {
                       onClick={() => handleCopy(task.id)}
                       className="btn btn-xs sm:btn-sm btn-circle bg-slate-900 text-slate-500"
                     >
-                      <ClipboardCopy size={14} />
+                      {task.id===copyTask ? <ClipboardCheck size={14}/> : <ClipboardCopy size={14} />} 
                     </button>
 
                     {/* Pin/Unpin Button */}
